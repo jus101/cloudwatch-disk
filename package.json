@@ -1,6 +1,6 @@
 {
   "name": "cloudwatch-heartbeat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sends a 1 to AWS CloudWatch every so often.",
   "main": "index.js",
   "scripts": {
