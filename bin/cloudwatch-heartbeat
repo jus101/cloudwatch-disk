@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+var argsv = require('yargs').argv;
+var cloudwatch_heartbeat = require('../');
+
+var beater = cloudwatch_heartbeat.createHeartbeater({
+  accessKeyId: argsv.access_key,
+  secretAccessKey: argsv.secret_key,
+  region: argsv.region
+}, {
+  namespace: argsv.namespace,
+  metricName: argsv.metricname,
+  processTitle: argsv.processTitle,
+  frequency: argsv.frequency,
+  hostName: argsv.hostname
+});
+
+beater.on('error', function(err){
+  console.error(err.stack);
+  process.exit(1);
+});
+
+beater.on('heartbeat', function(data){
+  console.log('heartbeat', data);
+});

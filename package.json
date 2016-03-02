@@ -1,0 +1,28 @@
+{
+  "name": "cloudwatch-heartbeat",
+  "version": "1.0.0",
+  "description": "Sends a 1 to AWS CloudWatch every so often.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jus101/cloudwatch-heartbeat"
+  },
+  "keywords": [
+    "aws",
+    "cloudwatch",
+    "heartbeat"
+  ],
+  "author": "jus101@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jus101/cloudwatch-heartbeat/issues"
+  },
+  "homepage": "https://github.com/jus101/cloudwatch-heartbeat",
+  "dependencies": {
+    "aws-sdk": "^2.2.40",
+    "yargs": "^4.2.0"
+  }
+}
