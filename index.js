@@ -18,7 +18,6 @@ Heartbeater.prototype.start = function() {
 }
 
 Heartbeater.prototype.pulse = function() {
-  console.log('pulse');
   this.hbTimer = setTimeout(this.send.bind(this), this.config.interval || DEFAULT_HB_INTERVAL);
 }
 
@@ -62,10 +61,8 @@ Heartbeater.prototype.send = function() {
 
   this.cloudWatch.putMetricData(params, function(err, data){
     if(err) {
-      console.error('error', err);
       this.emit('error', err);
     } else {
-      console.log('heartbeat', err);
       this.emit('heartbeat', data);
     }
     this.pulse();
