@@ -57,8 +57,6 @@ Heartbeater.prototype.send = function() {
     ]
   };
 
-  console.log('put metric data', params);
-
   this.cloudWatch.putMetricData(params, function(err, data){
     if(err) {
       this.emit('error', err);
